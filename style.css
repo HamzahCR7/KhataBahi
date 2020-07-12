@@ -51,7 +51,13 @@ input[type=number] {
 .budget-container .app-title{
     /* position: relative; */
     margin-top: 45px;
-    margin-left: 20px;
+    margin-left: 0px;
+   
+}
+.budget-container .app-title img{
+    width: 50px;
+    height: 50px;
+    transform: translateY(17px);
 }
 
 .budget-container .app-title a{
@@ -380,6 +386,7 @@ input[type=number] {
     border-radius: 0 10px 10px 0;
     border: none;
 }
+
 .budget-dashboard #income .input input#income-date{
     height: 40px;
     width : 150px;
