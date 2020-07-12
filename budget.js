@@ -20,10 +20,12 @@ const allBtn = document.querySelector(".tab3");
 const addExpense = document.querySelector(".add-expense");
 const expenseTitle = document.getElementById("expense-title-input");
 const expenseAmount = document.getElementById("expense-amount-input");
+const expenseDate=document.getElementById("expense-date");
 
 const addIncome = document.querySelector(".add-income");
 const incomeTitle = document.getElementById("income-title-input");
 const incomeAmount = document.getElementById("income-amount-input");
+const incomeDate=document.getElementById('income-date');
 
 // VARIABLES
 let ENTRY_LIST;
@@ -62,12 +64,13 @@ addExpense.addEventListener("click", function(){
     let expense = {
         type : "expense",
         title : expenseTitle.value,
-        amount : parseInt(expenseAmount.value)
+        amount : parseInt(expenseAmount.value),
+        date:expenseDate.value
     }
     ENTRY_LIST.push(expense);
 
     updateUI();
-    clearInput( [expenseTitle, expenseAmount] )
+    clearInput( [expenseTitle, expenseAmount,expenseDate] )
 })
 
 addIncome.addEventListener("click", function(){
@@ -78,12 +81,14 @@ addIncome.addEventListener("click", function(){
     let income = {
         type : "income",
         title : incomeTitle.value,
-        amount : parseInt(incomeAmount.value)
+        amount : parseInt(incomeAmount.value),
+        date:incomeDate.value
+
     }
     ENTRY_LIST.push(income);
 
     updateUI();
-    clearInput( [incomeTitle, incomeAmount] )
+    clearInput( [incomeTitle, incomeAmount,incomeDate] )
 })
 
 incomeList.addEventListener("click", deleteOrEdit);
@@ -142,11 +147,11 @@ function updateUI(){
 
     ENTRY_LIST.forEach( (entry, index) => {
         if( entry.type == "expense" ){
-            showEntry(expenseList, entry.type, entry.title, entry.amount, index)
+            showEntry(expenseList, entry.type, entry.title, entry.amount, index,entry.date)
         }else if( entry.type == "income" ){
-            showEntry(incomeList, entry.type, entry.title, entry.amount, index)
+            showEntry(incomeList, entry.type, entry.title, entry.amount, index,entry.date)
         }
-        showEntry(allList, entry.type, entry.title, entry.amount, index)
+        showEntry(allList, entry.type, entry.title, entry.amount, index,entry.date)
     });
 
     updateChart(income, outcome);
@@ -154,10 +159,11 @@ function updateUI(){
     localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
 }
 
-function showEntry(list, type, title, amount, id){
+function showEntry(list, type, title, amount, id,date){
 
     const entry = ` <li id = "${id}" class="${type}">
-                        <div class="entry">${title}: ₹${amount}</div>
+    
+                        <div class="entry">${date}:${title}: ₹${amount}</div>
                         <div id="edit"></div>
                         <div id="delete"></div>
                     </li>`;

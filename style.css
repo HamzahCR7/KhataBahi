@@ -379,11 +379,22 @@ input[type=number] {
     border-radius: 0 10px 10px 0;
     border: none;
 }
-
+.budget-dashboard #income .input input#income-date{
+    height: 40px;
+    width : 150px;
+    padding-left: 10px;
+    font-size: 1em;
+    font-family: 'Gilroy';
+    margin: 4px;
+    margin-left: 10px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+}
 .budget-dashboard #income .input .add-income img{
     width: 40px;
     height: 40px;
     cursor: pointer;
+    margin-left:140px;
 }
 
 .budget-dashboard #income ul{
