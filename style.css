@@ -281,6 +281,7 @@ input[type=number] {
     width: 40px;
     height: 40px;
     cursor: pointer;
+    margin-left:140px ;
 }
 
 .budget-dashboard #expense ul{
@@ -380,6 +381,17 @@ input[type=number] {
     border: none;
 }
 .budget-dashboard #income .input input#income-date{
+    height: 40px;
+    width : 150px;
+    padding-left: 10px;
+    font-size: 1em;
+    font-family: 'Gilroy';
+    margin: 4px;
+    margin-left: 10px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+}
+.budget-dashboard #expense .input input#expense-date{
     height: 40px;
     width : 150px;
     padding-left: 10px;
